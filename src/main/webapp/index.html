@@ -3,11 +3,63 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title> JSON </title>
+
+ <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+
+
+<script>
+ $(function(){
+
+        var jsonObj = $.parseJSON('{"empId":1,"empName":"vanitha","empAge":21,"empQualifcation":"B.E.","empEmailId":"vani@gmail.com","empPhone":"90034536"}');
+		
+        var html = '<table border="1" class="table">';
+        $.each(jsonObj, function(key, value){
+          
+			html += '<thead';
+			html += '<tr>';
+            html += '<th>' + key + '</th>';
+			html += '</tr>';
+			html += '</thead>';
+
+			html += '<tbody>';
+			html += '<tr>';
+            html += '<td>' + value + '</td>';
+				html += '</tr>';
+			html += '</tbody>';
+          
+        });
+        html += '</table>';
+
+        $('div').html(html);
+    });
+	</script>
+
+
+
+	<style>
+	.jsp{
+		margin-left:150px;
+		margin-right: 50px;
+		margin-top:100px;
+	}
+
+
+	</style>
 </head>
+
 <body>
 
-	<h1>Service is running...</h1>
+	<div class="jsp">
+
+	</div>
 
 </body>
 </html

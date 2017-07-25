@@ -1,4 +1,0 @@
-0:0:0:0:0:0:0:1 - - [24/Jul/2017:17:50:54 +0530] "GET / HTTP/1.1" 304 - http-bio-9090-exec-1 79
-0:0:0:0:0:0:0:1 - - [24/Jul/2017:17:51:05 +0530] "GET /getEmployee HTTP/1.1" 200 - http-bio-9090-exec-2 440
-0:0:0:0:0:0:0:1 - - [24/Jul/2017:17:51:18 +0530] "GET /getEmployee HTTP/1.1" 200 - http-bio-9090-exec-3 22
-0:0:0:0:0:0:0:1 - - [24/Jul/2017:17:51:20 +0530] "GET /getEmployee HTTP/1.1" 200 - http-bio-9090-exec-4 17

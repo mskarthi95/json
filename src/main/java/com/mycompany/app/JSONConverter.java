@@ -1,11 +1,6 @@
 package com.mycompany.app;
 import com.google.gson.Gson;
 
-/**
- * 
- * @author Dinesh Krishnan
- *
- */
 
 public class JSONConverter {
 

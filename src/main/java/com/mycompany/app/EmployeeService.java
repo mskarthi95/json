@@ -8,7 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.sql.*;
-
+import java.util.*;
+import java.sql.SQLException;
 
 
 /**
@@ -31,14 +32,15 @@ public class EmployeeService extends HttpServlet {
 		
 		// creating employee object
 		Employee employee = new Employee();
-		List<Employee> e=new 
+	//	List<Employee> emp=new ArrayList<Employee>();
 		try{
             Class.forName("com.mysql.jdbc.Driver");
-            Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/register", "root", "");
+            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/register", "root", "");
             
-            Statement stmt=conn.createStatement();
-           ResultSet rs1=stmt.executeQuery("select * from employee");
-          // while(rs1.next())  
+            PreparedStatement ps=con.prepareStatement("select * from employee");  
+            ResultSet rs1=ps.executeQuery();  
+           while(rs1.next()) 
+		   {
      //System.out.println( rs1.getInt(1)+" "+rs1.getString(2)+"  "+rs1.getString(3)+" "+rs1.getDate(4)+" "+rs1.getString(5)+" "+rs1.getInt(6)); 
 		// setting the attributes
 		employee.setEmpId(rs1.getInt(1));
@@ -47,10 +49,11 @@ public class EmployeeService extends HttpServlet {
 		employee.setEmpQualifcation(rs1.getString(4));
 		employee.setEmpEmailId(rs1.getString(5));
 		employee.setEmpPhone(rs1.getString(6));
-		
-		// converting object to json using Gson api.
 		out.println(JSONConverter.convert(employee));
-	conn.close();
+		   }
+		// converting object to json using Gson api.
+		
+	con.close();
 
             }
             catch(Exception e)
