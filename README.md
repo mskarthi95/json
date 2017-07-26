@@ -43,5 +43,16 @@ public class JSONConverter {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.1/bootstrap-table.min.js"></script>
 
+## Created DB in MySql and Connected with JDBC deiver
+
+```java
+ 	Class.forName("com.mysql.jdbc.Driver");
+ 	Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/register", "root", "");
+ ```
+
+## converting object to json using Gson api.
+```java
+out.println(JSONConverter.convert(employee));
+```	
 
 
